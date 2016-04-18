@@ -1,4 +1,4 @@
-# dnd-keep
+# D&D Keep
 Simple client side web application for managing D&D characters
 
 ## Quick Start

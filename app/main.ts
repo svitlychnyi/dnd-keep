@@ -1,4 +1,5 @@
-import {bootstrap}    from 'angular2/platform/browser';
-import {CharComponent} from './components/char/char.component';
+import { bootstrap }    from '@angular/platform-browser-dynamic';
+import {CharComponent} from "./char/char.component";
+import {CharService} from "./char/char.service";
 
-bootstrap(CharComponent);
+bootstrap(CharComponent, [CharService]);

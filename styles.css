@@ -177,3 +177,13 @@ label {
 .cha input {
     background-color: rgba(255, 255, 0, 0.1) !important;
 }
+
+input[type="number" ] {
+    padding: 1px 0px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+}

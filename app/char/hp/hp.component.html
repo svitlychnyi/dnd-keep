@@ -1,0 +1,32 @@
+<div class="row">
+    <div class="col-xs-4"></div>
+    <div class="col-xs-2"><p class="text-uppercase">Total</p></div>
+    <div class="col-xs-2"><p class="text-uppercase">Ability Modifier</p></div>
+    <div class="col-xs-2"><p class="text-uppercase">Misc Modifier</p></div>
+</div>
+<div class="row">
+    <div class="col-xs-4"><input type="text" value="Initiative" class="form-control input-sm inverse"/></div>
+    <div class="col-xs-2"><input type="text" value="{{ (charService.getChar().initiative || 0) + charService.getAbilityModifier(dex) }}" class="form-control input-sm"/></div>
+    <div class="col-xs-2 {{dex.getName()}}"><input type="text" value="{{ charService.getAbilityModifier(dex) }}" class="form-control input-sm"/></div>
+    <div class="col-xs-2"><input type="number" [(ngModel)]="charService.getChar().initiative" class="form-control input-sm"/></div>
+</div>
+<div class="row">
+    <div class="col-xs-4"><input type="text" value="Speed" class="form-control input-sm inverse"/></div>
+    <div class="col-xs-2"><input type="text" value="{{charService.getChar().speed + (charService.getChar().speed_bonus || 0)}}" class="form-control input-sm"/></div>
+    <div class="col-xs-2"><input type="number" [(ngModel)]="charService.getChar().speed" class="form-control input-sm"/></div>
+    <div class="col-xs-2"><input type="number" [(ngModel)]="charService.getChar().speed_bonus" class="form-control input-sm"/></div>
+</div>
+<div class="row">
+    <div class="col-xs-4"><input type="text" value="HP" class="form-control input-sm inverse"/></div>
+    <div class="col-xs-2"><input type="number" [(ngModel)]="charService.getChar().hp_max" class="form-control input-sm"/></div>
+    <div class="col-xs-4"><input type="number" [(ngModel)]="charService.getChar().hp" class="form-control input-sm"/></div>
+</div>
+<div class="row">
+    <div class="col-xs-4"><input type="text" value="XP" class="form-control input-sm inverse"/></div>
+    <div class="col-xs-3"><input type="text" value="{{getNextLevelXP()}}" class="form-control input-sm"/></div>
+    <div class="col-xs-3"><input type="number" [(ngModel)]="charService.getChar().xp" class="form-control input-sm"/></div>
+</div>
+<div class="row">
+    <div class="col-xs-6"><input type="text" value="Base Attack Bonus" class="form-control input-sm inverse"/></div>
+    <div class="col-xs-4"><input type="text" value="{{charService.getBAB()}}" class="form-control input-sm"/></div>
+</div>

@@ -1,0 +1,88 @@
+<div class="row">
+    <div class="col-xs-8">
+        <div class="row">
+            <div class="col-xs-3">
+                <input type="text" id="charName" class="form-control input-sm" [(ngModel)]="charService.getChar().name"/>
+                <label for="charName" class="text-uppercase">Character Name</label>
+            </div>
+
+            <div class="col-xs-3">
+                <input type="text" id="class1" class="form-control input-sm"
+                       value="{{charService.getChar().classes.class1.getClass().getName() + ' ' + charService.getChar().classes.class1.getLevel()}}"/>
+                <label for="class1" class="text-uppercase">Class (Level)</label>
+            </div>
+
+            <div class="col-xs-2">
+                <input type="text" id="alignment" class="form-control input-sm" [(ngModel)]="charService.getChar().alignment"/>
+                <label for="alignment" class="text-uppercase">Alignment</label>
+            </div>
+
+            <div class="col-xs-4">
+                <input type="text" id="deities" class="form-control input-sm" [(ngModel)]="charService.getChar().deities"/>
+                <label for="deities" class="text-uppercase">Deities</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-2">
+                <input type="text" id="race" class="form-control input-sm" [(ngModel)]="charService.getChar().race"/>
+                <label for="race" class="text-uppercase">Race</label>
+            </div>
+
+            <div class="col-xs-1">
+                <input type="text" id="vision" class="form-control input-sm" [(ngModel)]="charService.getChar().vision"/>
+                <label for="vision" class="text-uppercase">Vision</label>
+            </div>
+
+            <div class="col-xs-3">
+                <input type="text" id="class2" class="form-control input-sm"
+                    value="{{charService.getChar().classes.class2.getClass().getName() + ' ' + charService.getChar().classes.class2.getLevel()}}"/>
+                <label for="class2" class="text-uppercase">Class (Level)</label>
+            </div>
+
+            <div class="col-xs-2">
+                <input type="text" id="sex" class="form-control input-sm" [(ngModel)]="charService.getChar().sex"/>
+                <label for="sex" class="text-uppercase">Sex</label>
+            </div>
+
+            <div class="col-xs-2">
+                <input type="text" id="eyes" class="form-control input-sm" [(ngModel)]="charService.getChar().eyes"/>
+                <label for="eyes" class="text-uppercase">Eyes</label>
+            </div>
+
+            <div class="col-xs-2">
+                <input type="text" id="heir" class="form-control input-sm" [(ngModel)]="charService.getChar().heir"/>
+                <label for="heir" class="text-uppercase">Heir</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-3">
+                <input type="text" id="playerName" class="form-control input-sm" [(ngModel)]="charService.getChar().player"/>
+                <label for="playerName" class="text-uppercase">Player Name</label>
+            </div>
+
+            <div class="col-xs-3">
+                <input type="text" id="class3" class="form-control input-sm"
+                       value="{{charService.getChar().classes.class3.getClass().getName() + ' ' + charService.getChar().classes.class3.getLevel()}}"/>
+                <label for="class3" class="text-uppercase">Class (Level)</label>
+            </div>
+
+            <div class="col-xs-2">
+                <input type="text" id="age" class="form-control input-sm" [(ngModel)]="charService.getChar().age"/>
+                <label for="age" class="text-uppercase">Age</label>
+            </div>
+
+            <div class="col-xs-2">
+                <input type="text" id="height" class="form-control input-sm" [(ngModel)]="charService.getChar().height"/>
+                <label for="height" class="text-uppercase">Height</label>
+            </div>
+
+            <div class="col-xs-2">
+                <input type="text" id="weight" class="form-control input-sm" [(ngModel)]="charService.getChar().weight"/>
+                <label for="weight" class="text-uppercase">Weight</label>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-3">
+        <img class="img-responsive avatar"  src="app/resources/imgs/{{charService.getChar().avatar}}">
+    </div>
+</div>

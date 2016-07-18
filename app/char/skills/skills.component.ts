@@ -1,18 +1,27 @@
 import { Component } from '@angular/core';
 import {Skill} from "./skill";
 import {AbilityService} from "../abilities/ability.service";
+import {CharService} from "../char.service";
 
 @Component({
     selector: 'skills',
     templateUrl: './app/char/skills/skills.component.html',
-    inputs: ['char']
 })
 
 export class SkillsComponent {
-    char:Object;
     public skills:Skill[] = Skill.ALL;
 
-    public getAbilityModifier(abilityValue:number):number {
-        return AbilityService.getModifier(abilityValue);
-    };
+    constructor(public charService: CharService) {}
+
+    public isClassSkill(skill:Skill):boolean {
+        return this.charService.getClassSkills().indexOf(skill) !== -1;
+    }
+
+    public maxClassSkillRank():number {
+        return this.charService.getTotalLevel() + 3;
+    }
+
+    public maxCrossClassSkillRank():number {
+        return Math.round(this.maxClassSkillRank() / 2.1);
+    }
 };

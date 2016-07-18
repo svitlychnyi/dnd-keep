@@ -5,10 +5,13 @@ import {Ability} from "./abilities/abitly";
 import {Item} from "../items/item";
 import {CharClass} from "../classes/charClass";
 import {Classes} from "../classes/classes";
+import {Skill} from "./skills/skill";
+import {Array} from "../../node_modules/typescript/lib/lib.es7";
+import {Char} from "./char";
 
 @Injectable()
 export class CharService {
-    char = {
+    private char = {
         name: "Oberon",
         player: "Gena",
         race: "Human",
@@ -22,9 +25,9 @@ export class CharService {
         alignment: "LN",
         deities: "Luck / Trickery",
         classes: {
-            class1: new CharClass(Classes.CLERIC, 10),
-            class2: new CharClass(Classes.CLERIC, 0),
-            class3: new CharClass(Classes.CLERIC, 0)
+            class1: { name: "cleric", level: 10},
+            class2: { name: "cleric", level: 0},
+            class3: { name: "cleric", level: 0}
         },
         avatar: "sargon.jpg",
 
@@ -41,12 +44,32 @@ export class CharService {
         ench_abilities: {str: 0, dex: 0, con: 0, int: 0, wis: 0, cha: 0},
         tmp_abilities: {str: 2, dex: 1, con: 4, int: 1, wis: 2, cha: 1},
 
-        armor: new Item("Breast Plate", 4),
-        shield: new Item("Heavy Shield", 2),
+        skills: {
+            "balance": 1,
+            "bluff": 11,
+            "concentration": 13,
+            "decipherScript": 1,
+            "diplomacy": 11,
+            "knowledgeArc": 6,
+            "knowledgeReligion": 6,
+            "knowledgePlanar": 1,
+            "knowledgeHistory": 1,
+            "spellcraft": 13
+        },
+        skills_misc: {
+            "spellcraft": 2
+        },
+
+        armor: {name:"Breast Plate", bonus:4},
+        shield: {name:"Heavy Shield", bonus:2},
     };
 
     public getChar():Char {
         return this.char;
+    }
+
+    public setChar(char:Char) {
+        this.char = char;
     }
 
     public getCharAbility(ability:Ability):number {
@@ -71,7 +94,7 @@ export class CharService {
     public getTotalLevel():number {
         var totalLevel = 0;
         for (var className in this.getChar().classes) {
-            totalLevel += Number(this.getChar().classes[className].getLevel());
+            totalLevel += Number(this.getChar().classes[className].level);
         }
         return totalLevel;
     }
@@ -79,18 +102,38 @@ export class CharService {
     public getBAB():number {
         var totalBAB:number = 0;
         for (var className in this.getChar().classes) {
-            var charClass:CharClass = this.getChar().classes[className];
-            totalBAB += charClass.getClass().getBAB(charClass.getLevel());
+            var charClass:Classes = Classes.getClass(this.getChar().classes[className].name);
+            totalBAB += charClass.getBAB(this.getChar().classes[className].level);
         }
         return totalBAB;
     }
 
-    public getSave(ability:Ability) {
+    public getSave(ability:Ability):number {
         var totalSave:number = 0;
         for (var className in this.getChar().classes) {
-            var charClass:CharClass = this.getChar().classes[className];
-            totalSave += charClass.getClass().getSave(ability, charClass.getLevel());
+            var charClass:Classes = Classes.getClass(this.getChar().classes[className].name);
+            totalSave += charClass.getSave(ability, this.getChar().classes[className].level);
         }
         return totalSave;
+    }
+
+    public getTotalSkillRank(skill:Skill):number {
+        return (this.getChar().skills[skill.getName()] || 0)
+            + (this.getChar().skills_misc[skill.getName()] || 0)
+            + this.getAbilityModifier(skill.getAbility());
+    }
+
+    public getClassSkills():[Skill] {
+        var classSkills:Skill[] = [];
+        for(var classKey in this.getChar().classes) {
+            classSkills = classSkills.concat(Classes.getClass(this.getChar().classes[classKey].name).getSkills());
+        }
+
+        if(this.getChar().deities.indexOf("Trickery")) {
+            classSkills.push(Skill.BLUFF);
+            classSkills.push(Skill.DISGUISE);
+            classSkills.push(Skill.HIDE);
+        }
+        return classSkills;
     }
 }

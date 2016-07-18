@@ -29,6 +29,9 @@ export interface Char {
     ench_abilities: Object;
     tmp_abilities: Object;
 
+    skills: Object;
+    sills_misc: Object;
+
     armor: Item;
     shield: Item;
 }

@@ -18,4 +18,8 @@ export class CharClass {
     getLevel():number {
         return this._level;
     }
+
+    toString():string {
+        return "111";
+    }
 }

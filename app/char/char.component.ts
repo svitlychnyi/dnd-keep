@@ -13,6 +13,8 @@ import {OnInit} from "../../node_modules/angular2/ts/src/core/linker/interfaces"
 import {Ability} from "./abilities/abitly";
 import {CharService} from "./char.service";
 import {Char} from "./char";
+import {CharSerializer} from "./charSerializer";
+import {CharSerializer} from "./charSerializer";
 
 @Component({
     selector: 'char',
@@ -24,13 +26,29 @@ import {Char} from "./char";
 })
 
 
-export class CharComponent implements OnInit{
-    public abilities:Ability[] = Ability.ALL;
-    public char:Char;
+export class CharComponent {
 
-    constructor(private _charService:CharService) {}
+    constructor(public charService: CharService) {}
 
-    ngOnInit() {
-        this.char = this._charService.getChar();
+    public download(){
+        var json = CharSerializer.serializeChar(this.charService.getChar());
+        var blob = new Blob([json], {type: "application/json"});
+        var url = window.URL.createObjectURL(blob);
+        var a = document.createElement('a');
+        a.href = url;
+        a.download = this.charService.getChar().name + ".json";
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        window.URL.revokeObjectURL(url);
+    }
+
+    public upload(){
+        var that = this;
+        var reader = new FileReader();
+        reader.onload = function(){
+            that.charService.setChar(CharSerializer.deserializeChar(event.target.result));
+        };
+        reader.readAsText(event.target.files[0]);
     }
 }

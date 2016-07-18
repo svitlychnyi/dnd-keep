@@ -28,8 +28,8 @@ export class Skill {
 	public static KNOWLEDGE_ARC:Skill = new Skill("knowledgeArc","Knowledge (Arcana)", Ability.INT);
 	public static KNOWLEDGE_NATURE:Skill = new Skill("knowledgeNature","Knowledge (Nature)", Ability.INT);
 	public static KNOWLEDGE_RELIGION:Skill = new Skill("knowledgeReligion","Knowledge (Religion)", Ability.INT);
-	public static KNOWLEDGE_1:Skill = new Skill("knowledge1","Knowledge", Ability.INT);
-	public static KNOWLEDGE_2:Skill = new Skill("knowledge2","Knowledge", Ability.INT);
+	public static KNOWLEDGE_PLANAR:Skill = new Skill("knowledgePlanar","Knowledge (Planar)", Ability.INT);
+	public static KNOWLEDGE_HISTORY:Skill = new Skill("knowledgeHistory","Knowledge (History)", Ability.INT);
 	public static KNOWLEDGE_3:Skill = new Skill("knowledge3","Knowledge", Ability.INT);
 	public static KNOWLEDGE_4:Skill = new Skill("knowledge4","Knowledge", Ability.INT);
 	public static KNOWLEDGE_5:Skill = new Skill("knowledge5","Knowledge", Ability.INT);
@@ -38,15 +38,15 @@ export class Skill {
 	public static OPEN_LOCK:Skill = new Skill("openLock","Open Lock", Ability.DEX);
 	public static PERFORM:Skill = new Skill("perform","Perform", Ability.CHA);
 	public static PICK_POCKETS:Skill = new Skill("pickPockets","Pick Pockets", Ability.DEX);
-	public static PROFESSION_1:Skill = new Skill("profession1","Profession", Ability.NONE);
-	public static PROFESSION_2:Skill = new Skill("profession2","Profession", Ability.NONE);
-	public static PROFESSION_3:Skill = new Skill("profession3","Profession", Ability.NONE);
+	public static PROFESSION_1:Skill = new Skill("profession1","Profession", Ability.INT);
+	public static PROFESSION_2:Skill = new Skill("profession2","Profession", Ability.INT);
+	public static PROFESSION_3:Skill = new Skill("profession3","Profession", Ability.INT);
 	public static READ_LIPS:Skill = new Skill("readLips","Read Lips", Ability.INT);
 	public static RIDE:Skill = new Skill("ride","Ride", Ability.DEX);
 	public static SCRY:Skill = new Skill("scry","Scry", Ability.INT);
 	public static SEARCH:Skill = new Skill("search","Search", Ability.INT);
 	public static SENSE_MOTIVE:Skill = new Skill("senseMotive","Sense Motive", Ability.WIS);
-	public static SPEAK_LANGUAGE:Skill = new Skill("speakLanguage","Speak Language", Ability.NONE);
+	public static SPEAK_LANGUAGE:Skill = new Skill("speakLanguage","Speak Language", Ability.INT);
 	public static SPELLCRAFT:Skill = new Skill("spellcraft","Spellcraft", Ability.INT);
 	public static SPOT:Skill = new Skill("spot","Spot", Ability.WIS);
 	public static SWIM:Skill = new Skill("swim","Swim", Ability.STR);
@@ -54,8 +54,8 @@ export class Skill {
 	public static USE_MAGIC_DEVICE:Skill = new Skill("useMagicDevice","Use Magic Device", Ability.CHA);
 	public static USE_ROPE:Skill = new Skill("useRope","Use Rope", Ability.DEX);
 	public static WILDERNESS_LORE:Skill = new Skill("wildernessLore","Wilderness Lore", Ability.WIS);
-	public static PLACEHOLDER_1:Skill = new Skill("placeholder1","", Ability.NONE);
-	public static PLACEHOLDER_2:Skill = new Skill("placeholder2","", Ability.NONE);
+	public static PLACEHOLDER_1:Skill = new Skill("placeholder1","", Ability.INT);
+	public static PLACEHOLDER_2:Skill = new Skill("placeholder2","", Ability.INT);
 
     private name:string;
     private label:string;

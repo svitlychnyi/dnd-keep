@@ -6,9 +6,11 @@ import {Ability} from "../char/abilities/abitly";
  * Created by sargon on 7/16/16.
  */
 export class Classes {
+    public static ALL:Classes[] = [];
     public static CLERIC:Classes = new Classes("cleric", ClassesFormulas.getMediumBAB,
         ClassesFormulas.getHighSave, ClassesFormulas.getLowSave, ClassesFormulas.getHighSave,
-        [Skill.BALANCE]);
+        [Skill.CONCENTRATION, Skill.CRAFT_1, Skill.DIPLOMACY, Skill.HEAL, Skill.KNOWLEDGE_ARC, Skill.KNOWLEDGE_HISTORY,
+        Skill.KNOWLEDGE_RELIGION, Skill.KNOWLEDGE_PLANAR, Skill.PROFESSION_1, Skill.SPELLCRAFT]);
 
     public static MONK:Classes = new Classes("monk", ClassesFormulas.getHighBAB,
         ClassesFormulas.getHighSave, ClassesFormulas.getLowSave, ClassesFormulas.getHighSave,
@@ -29,6 +31,16 @@ export class Classes {
         this._reflexSaveFunction = reflexSaveFunction;
         this._willSaveFunction = willSaveFunction;
         this._skills = skills;
+        Classes.ALL.push(this);
+    }
+
+    public static getClass(name:string):Classes {
+        for(var clazz:Classes of Classes.ALL) {
+            if(clazz.getName() === name) {
+                return clazz;
+            }
+        }
+        return null;
     }
 
     public getName():string {

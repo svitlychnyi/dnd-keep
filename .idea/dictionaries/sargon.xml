@@ -2,6 +2,8 @@
   <dictionary name="sargon">
     <words>
       <w>&quot;cleric&quot;</w>
+      <w>scry</w>
+      <w>spellcraft</w>
     </words>
   </dictionary>
 </component>

@@ -16,7 +16,7 @@ export class ACComponent {
         var isMonk: boolean = false;
 
         for(var classKey in this.charService.getChar().classes) {
-            isMonk = this.charService.getChar().classes[classKey].getClass() == Classes.MONK
+            isMonk = this.charService.getChar().classes[classKey].name == Classes.MONK.getName()
                 ? true
                 : isMonk;
         }
@@ -28,16 +28,16 @@ export class ACComponent {
 
     getAC():number {
         return 10
-            + this.charService.getChar().armor.getBonus()
-            + this.charService.getChar().shield.getBonus()
+            + this.charService.getChar().armor.bonus
+            + this.charService.getChar().shield.bonus
             + this.charService.getAbilityModifier(Ability.DEX)
             + (this.getWisdomModifier() || 0 );
     }
 
     getFF():number {
         return 10
-            + this.charService.getChar().armor.getBonus()
-            + this.charService.getChar().shield.getBonus()
+            + this.charService.getChar().armor.bonus
+            + this.charService.getChar().shield.bonus
             + (this.getWisdomModifier() || 0 );
     }
 

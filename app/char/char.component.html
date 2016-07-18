@@ -1,3 +1,6 @@
+<button (click)="download()">Download</button>
+<input id="file" type="file" (change)="upload()"/>
+
 <header></header>
 
 <div style="font-size: 10px; text-align: center">
@@ -13,7 +16,7 @@
             </div>
         </div>
         <div class="col-xs-5">
-            <skills class="skillTable" [char]="char"></skills>
+            <skills class="skillTable"></skills>
         </div>
     </div>
     <div class="row">

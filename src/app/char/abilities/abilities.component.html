@@ -1,0 +1,24 @@
+<div class="row">
+    <div class="col-xs-3"></div>
+    <div class="col-xs-2"><label class="text-uppercase">Ability Score</label></div>
+    <div class="col-xs-2"><label class="text-uppercase">Ability Modifier</label></div>
+    <div class="col-xs-2"><label class="text-uppercase">Ench Score</label></div>
+    <div class="col-xs-2"><label class="text-uppercase">Temp Score</label></div>
+</div>
+<div class="row" *ngFor="let ability of abilities">
+    <div class="col-xs-3">
+        <input type="text" value="{{ability.getName()}}" class="form-control input-sm text-uppercase inverse"/>
+    </div>
+    <div class="col-xs-2 {{ability.getName()}}">
+        <input type="number" class="form-control input-sm" [(ngModel)]="_charService.getChar().abilities[ability.getName()]"/>
+    </div>
+    <div class="col-xs-2 {{ability.getName()}}">
+        <input type="text" readonly class="form-control input-sm" value="{{ _charService.getAbilityModifier(ability) }}"/>
+    </div>
+    <div class="col-xs-2 {{ability.getName()}}">
+        <input type="number" class="form-control input-sm" [(ngModel)]="_charService.getChar().ench_abilities[ability.getName()]"/>
+    </div>
+    <div class="col-xs-2 {{ability.getName()}}">
+        <input type="number" class="form-control input-sm" [(ngModel)]="_charService.getChar().tmp_abilities[ability.getName()]"/>
+    </div>
+</div>

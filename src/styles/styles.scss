@@ -1,0 +1,210 @@
+/* this file will be extracted to main dist folder and is imported in index.html */
+/* This file is for setting global styles  */
+@import 'variables';
+@import url('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css');
+
+nav {
+  margin-top: 16px;
+}
+
+nav a {
+  background-color: $nav-button-color;
+  color: white;
+  padding: 8px 16px;
+  margin: 8px;
+  vertical-align: middle;
+  line-height: 1.25;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 4px;
+}
+
+/* app css stylesheet */
+
+.menu {
+  list-style: none;
+  border-bottom: 0.1em solid black;
+  margin-bottom: 2em;
+  padding: 0 0 0.5em;
+}
+
+.menu:before {
+  content: "[";
+}
+
+.menu:after {
+  content: "]";
+}
+
+.menu > li {
+  display: inline;
+}
+
+.menu > li:before {
+  content: "|";
+  padding-right: 0.3em;
+}
+
+.menu > li:nth-child(1):before {
+  content: "";
+  padding: 0;
+}
+
+body {
+  max-width: 1100px;
+  min-width: 1100px;
+  display: block;
+  margin: auto;
+  padding: 30px;
+}
+
+.no-gutter .row > [class*='col-'] {
+  padding-right: 5px;
+  padding-left: 5px;
+}
+
+.form-control {
+  text-align: center;
+}
+
+.skillTable {
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 230px;
+}
+
+.skillTable .row {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.skillTable input[type=checkbox] {
+  margin: 0;
+  padding: 0;
+}
+
+.skillTable .input-sm {
+  height: 13px;
+  font-size: 11px;
+  line-height: 11px;
+  padding: 0px;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  box-shadow: none;
+}
+
+p,
+label {
+  margin: 0 0 2px;
+}
+
+.row {
+  margin-top: 4px;
+}
+
+.inverse {
+  background: black !important;
+  color: white !important;
+  font-weight: 600;
+  border-radius: 9px 9px 0 0;
+}
+
+@media print {
+  button {
+    display: none !important;
+  }
+
+  input,
+  textarea {
+    box-shadow: none !important;
+    outline: none !important;
+  }
+
+  .skillTable input {
+    border-bottom: 1px dashed !important;
+  }
+
+  .inverse,
+  .weapon label {
+    -webkit-print-color-adjust: exact;
+  }
+
+  .str input,
+  .dex input,
+  .con input,
+  .int input,
+  .wis input,
+  .cha input {
+    -webkit-print-color-adjust: exact;
+  }
+}
+
+.avatar {
+  margin: 0 0 0 45px;
+  position: absolute;
+}
+
+.input-sm {
+  height: 25px;
+}
+
+.weapon {
+  margin-top: 10px;
+  padding: 0 10px;
+}
+
+.weapon .row {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.weapon label {
+  background: black !important;
+  color: white !important;
+  width: 100%;
+}
+
+.weapon .header label {
+  margin-top: 10px;
+}
+
+.weapon .row > [class*='col-'] {
+  padding-right: 0;
+  padding-left: 0;
+}
+
+.str input {
+  background-color: rgba(255, 0, 0, 0.1) !important;
+}
+
+.dex input {
+  background-color: rgba(51, 153, 51, 0.1) !important;
+}
+
+.con input {
+  background-color: rgba(0, 102, 255, 0.1) !important;
+}
+
+.int input {
+  background-color: rgba(204, 51, 255, 0.1) !important;
+}
+
+.wis input {
+  background-color: rgba(255, 102, 0, 0.1) !important;
+}
+
+.cha input {
+  background-color: rgba(255, 255, 0, 0.1) !important;
+}
+
+input[type="number" ] {
+  padding: 1px 0px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  /* display: none; <- Crashes Chrome on hover */
+  -webkit-appearance: none;
+}

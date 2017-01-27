@@ -4,6 +4,7 @@ import { AbilityService } from './abilities/ability.service';
 import { Ability } from './abilities/abitly';
 import { Classes } from '../classes/classes';
 import { Skill } from './skills/skill';
+import { Item } from '../items/item';
 
 @Injectable()
 export class CharService {
@@ -56,8 +57,8 @@ export class CharService {
       "spellcraft": 2
     },
 
-    armor: { name: "Breast Plate", bonus: 4 },
-    shield: { name: "Heavy Shield", bonus: 2 },
+    armor: new Item("Breast Plate", 4),
+    shield: new Item("Heavy Shield", 2)
   };
 
   public getChar(): Char {

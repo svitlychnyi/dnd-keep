@@ -1,5 +1,7 @@
-<button (click)="download()">Download</button>
-<input id="file" type="file" (change)="upload()"/>
+<div class="download">
+    <button (click)="download()">Download</button>
+    <input id="file" type="file" (change)="upload($event)"/>
+</div>
 
 <header></header>
 

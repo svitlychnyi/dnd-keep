@@ -28,22 +28,22 @@ export class ACComponent {
 
     getAC():number {
         return 10
-            // + this.charService.getChar().armor.getBonus()
-            // + this.charService.getChar().shield.getBonus()
-            + this.charService.getAbilityModifier(Ability.DEX)
-            + (this.getWisdomModifier() || 0 );
+            + Number(this.charService.getChar().armor.bonus)
+            + Number(this.charService.getChar().shield.bonus)
+            + Number(this.charService.getAbilityModifier(Ability.DEX))
+            + Number((this.getWisdomModifier() || 0 ));
     }
 
     getFF():number {
         return 10
-            // + this.charService.getChar().armor.getBonus()
-            // + this.charService.getChar().shield.getBonus()
-            + (this.getWisdomModifier() || 0 );
+            + Number(this.charService.getChar().armor.bonus)
+            + Number(this.charService.getChar().shield.bonus)
+            + Number((this.getWisdomModifier() || 0 ));
     }
 
     getTouch():number {
         return 10
-            + this.charService.getAbilityModifier(Ability.DEX)
-            + (this.getWisdomModifier() || 0 );
+            + Number(this.charService.getAbilityModifier(Ability.DEX))
+            + Number((this.getWisdomModifier() || 0 ));
     }
 };

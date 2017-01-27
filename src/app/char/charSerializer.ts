@@ -8,6 +8,7 @@ export class CharSerializer{
     }
 
     public static deserializeChar(charStr:string):Char {
+        console.log(charStr);
         return JSON.parse(charStr);
     }
 }

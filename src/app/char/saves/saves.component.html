@@ -39,17 +39,17 @@
                 <input class="text-uppercase inverse form-control input-sm" value="{{save.getLabel()}}" />
             </div>
             <div class="col-xs-3">
-                <input class="text-uppercase form-control input-sm" value="" />
+                <input readonly class="text-uppercase form-control input-sm" value="" />
             </div>
         </div>
     </div>
     <div class="col-xs-7">
         <div class="row">
             <div class="col-xs-2">
-                <input class="text-uppercase form-control input-sm" value="{{charService.getSave(save.getAbility())}}" />
+                <input readonly class="text-uppercase form-control input-sm" value="{{charService.getSave(save.getAbility())}}" />
             </div>
             <div class="col-xs-2 {{save.getAbility().getName()}}">
-                <input class="text-uppercase form-control input-sm" value="{{charService.getAbilityModifier(save.getAbility())}}" />
+                <input readonly class="text-uppercase form-control input-sm" value="{{charService.getAbilityModifier(save.getAbility())}}" />
             </div>
             <div class="col-xs-2">
                 <input class="text-uppercase form-control input-sm" value="" />

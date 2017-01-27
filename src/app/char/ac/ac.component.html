@@ -23,12 +23,12 @@
             <div class="col-xs-3"><input type="text" value="AC" class="form-control input-sm inverse"/></div>
             <div class="col-xs-3"><input type="text" readonly value="{{getAC()}}" class="form-control input-sm"/></div>
             <div class="col-xs-2"><input type="text" readonly value="10" class="form-control input-sm"/></div>
-            <div class="col-xs-3"><input type="text" readonly value="" class="form-control input-sm"/></div>
+            <div class="col-xs-3"><input type="text" readonly value="{{charService.getChar().armor.bonus}}" class="form-control input-sm"/></div>
         </div>
     </div>
     <div class="col-xs-7">
         <div class="row">
-            <div class="col-xs-2"><input type="text" readonly value="" class="form-control input-sm"/></div>
+            <div class="col-xs-2"><input type="text" readonly value="{{charService.getChar().shield.bonus}}" class="form-control input-sm"/></div>
             <div class="col-xs-2 dex"><input type="text" readonly value="{{charService.getAbilityModifier(dex)}}" class="form-control input-sm"/></div>
             <div class="col-xs-2 wis"><input type="text" readonly value="{{getWisdomModifier()}}" class="form-control input-sm"/></div>
             <div class="col-xs-2"><input type="text" value="" class="form-control input-sm"/></div>

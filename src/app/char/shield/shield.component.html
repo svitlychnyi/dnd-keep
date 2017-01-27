@@ -21,13 +21,13 @@
         <div class="col-xs-12">
             <div class="row">
                 <div class="col-xs-6">
-                    <input class="text-uppercase form-control input-sm" value=""/>
+                    <input class="form-control input-sm" [(ngModel)]="charService.getChar().shield.name"/>
                 </div>
                 <div class="col-xs-2">
                     <input class="text-uppercase form-control input-sm" value=""/>
                 </div>
                 <div class="col-xs-2">
-                    <input class="text-uppercase form-control input-sm" value=""/>
+                    <input class="text-uppercase form-control input-sm" [(ngModel)]="charService.getChar().shield.bonus"/>
                 </div>
                 <div class="col-xs-2">
                     <input class="text-uppercase form-control input-sm" value=""/>

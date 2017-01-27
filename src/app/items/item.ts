@@ -3,8 +3,8 @@
  */
 export class Item {
 
-    private name:string;
-    private bonus:number;
+    public name:string;
+    public bonus:number;
 
     constructor(name:string, bonus:number) {
         this.name = name;

@@ -3,10 +3,10 @@
     "js": "/dnd-keep/vendor.7ed635c81ea1dbfb93b0.bundle.js"
   },
   "main": {
-    "js": "/dnd-keep/main.8d12bf9a958ce4d49c3f.bundle.js",
+    "js": "/dnd-keep/main.dfab7aa26a02873dfb4b.bundle.js",
     "css": "/dnd-keep/main.7cedea42099fb7719b13f565ffc13e53.css"
   },
   "polyfills": {
-    "js": "/dnd-keep/polyfills.ed1a59f51b493ccd03e6.bundle.js"
+    "js": "/dnd-keep/polyfills.7a68898906f2d1919862.bundle.js"
   }
 }

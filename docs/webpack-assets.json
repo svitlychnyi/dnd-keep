@@ -1,12 +1,12 @@
 {
   "vendor": {
-    "js": "vendor.7ed635c81ea1dbfb93b0.bundle.js"
+    "js": "dnd-keepvendor.7ed635c81ea1dbfb93b0.bundle.js"
   },
   "main": {
-    "js": "main.8d12bf9a958ce4d49c3f.bundle.js",
-    "css": "main.7cedea42099fb7719b13f565ffc13e53.css"
+    "js": "dnd-keepmain.8d12bf9a958ce4d49c3f.bundle.js",
+    "css": "dnd-keepmain.7cedea42099fb7719b13f565ffc13e53.css"
   },
   "polyfills": {
-    "js": "polyfills.46e9ce7e450fedf84074.bundle.js"
+    "js": "dnd-keeppolyfills.c66ca4af4f7f7d22f341.bundle.js"
   }
 }

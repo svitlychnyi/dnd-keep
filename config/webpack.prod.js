@@ -53,6 +53,7 @@ module.exports = function (env) {
      */
     output: {
 
+      publicPath: 'dnd-keep',
       /**
        * The output directory as absolute path (required).
        *

@@ -111,6 +111,10 @@ label {
   border-radius: 9px 9px 0 0;
 }
 
+select.input-sm {
+  height: 25px !important;
+}
+
 @media print {
 
   .download {

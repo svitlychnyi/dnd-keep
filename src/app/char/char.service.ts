@@ -12,9 +12,10 @@ export class CharService {
     name: "Oberon",
     player: "Gena",
     race: "Human",
+    size: "m",
     sex: "Male",
     eyes: "Green",
-    vision: "LE",
+    vision: "Low-light",
     heir: "Black",
     age: 40,
     height: 6,
@@ -33,9 +34,17 @@ export class CharService {
     speed_bonus: 0,
     hp_max: 300,
     hp: 270,
-    xp: 45600,
+    xp: 44100,
     dr: "5/evil",
     sr: 21,
+
+    armor_bonuses: {
+      natural: 1,
+      deflection: 2,
+      misc: 0,
+      size: 0,
+      luck: 1
+    },
 
     abilities: { str: 10, dex: 11, con: 12, int: 13, wis: 14, cha: 15 },
     ench_abilities: { str: 0, dex: 0, con: 0, int: 0, wis: 0, cha: 0 },
@@ -115,9 +124,9 @@ export class CharService {
   }
 
   public getTotalSkillRank(skill: Skill): number {
-    return (this.getChar().skills[skill.getName()] || 0)
-      + (this.getChar().skills_misc[skill.getName()] || 0)
-      + this.getAbilityModifier(skill.getAbility());
+    return (Number(this.getChar().skills[skill.getName()]) || 0)
+      + (Number(this.getChar().skills_misc[skill.getName()]) || 0)
+      + Number(this.getAbilityModifier(skill.getAbility()));
   }
 
   public getClassSkills(): Skill[] {
@@ -133,4 +142,8 @@ export class CharService {
     }
     return classSkills;
   }
+
+  public getSizeArmorModifier() {
+
+  };
 }

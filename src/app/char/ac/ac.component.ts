@@ -1,49 +1,65 @@
 import { Component } from '@angular/core';
-import {CharService} from "../char.service";
-import {Ability} from "../abilities/abitly";
-import {Classes} from "../../classes/classes";
+import { CharService } from '../char.service';
+import { Ability } from '../abilities/abitly';
+import { Classes } from '../../classes/classes';
 
 @Component({
-    selector: 'ac',
-    templateUrl: 'ac.component.html'
+  selector: 'ac',
+  templateUrl: 'ac.component.html'
 })
 
 export class ACComponent {
-    dex:Ability = Ability.DEX;
-    constructor(public charService: CharService) {}
+  dex: Ability = Ability.DEX;
 
-    getWisdomModifier(): number {
-        var isMonk: boolean = false;
+  constructor(public charService: CharService) {
+  }
 
-        for(var classKey in this.charService.getChar().classes) {
-            isMonk = this.charService.getChar().classes[classKey].name == Classes.MONK.getName()
-                ? true
-                : isMonk;
-        }
+  getWisdomModifier(): number {
+    var isMonk: boolean = false;
 
-        return isMonk
-            ? this.charService.getAbilityModifier(Ability.WIS)
-            : 0;
+    for (var classKey in this.charService.getChar().classes) {
+      isMonk = this.charService.getChar().classes[classKey].name == Classes.MONK.getName()
+        ? true
+        : isMonk;
     }
 
-    getAC():number {
-        return 10
-            + Number(this.charService.getChar().armor.bonus)
-            + Number(this.charService.getChar().shield.bonus)
-            + Number(this.charService.getAbilityModifier(Ability.DEX))
-            + Number((this.getWisdomModifier() || 0 ));
-    }
+    return isMonk
+      ? this.charService.getAbilityModifier(Ability.WIS)
+      : 0;
+  }
 
-    getFF():number {
-        return 10
-            + Number(this.charService.getChar().armor.bonus)
-            + Number(this.charService.getChar().shield.bonus)
-            + Number((this.getWisdomModifier() || 0 ));
-    }
+  getAC(): number {
+    return 10
+      + Number(this.charService.getChar().armor.bonus)
+      + Number(this.charService.getChar().shield.bonus)
+      + Number(this.charService.getAbilityModifier(Ability.DEX))
+      + Number((this.getWisdomModifier() || 0 ))
+      + Number((this.charService.getChar().armor_bonuses.deflection || 0))
+      + Number((this.charService.getChar().armor_bonuses.natural || 0))
+      + Number((this.charService.getChar().armor_bonuses.misc || 0))
+      + Number((this.charService.getChar().armor_bonuses.size || 0))
+      + Number((this.charService.getChar().armor_bonuses.luck || 0));
+  }
 
-    getTouch():number {
-        return 10
-            + Number(this.charService.getAbilityModifier(Ability.DEX))
-            + Number((this.getWisdomModifier() || 0 ));
-    }
-};
+  getFF(): number {
+    return 10
+      + Number(this.charService.getChar().armor.bonus)
+      + Number(this.charService.getChar().shield.bonus)
+      + Number((this.getWisdomModifier() || 0 ))
+      + Number((this.charService.getChar().armor_bonuses.natural || 0))
+      + Number((this.charService.getChar().armor_bonuses.misc || 0))
+      + Number((this.charService.getChar().armor_bonuses.size || 0))
+      + Number((this.charService.getChar().armor_bonuses.luck || 0));
+  }
+
+  getTouch(): number {
+    return 10
+      + Number(this.charService.getAbilityModifier(Ability.DEX))
+      + Number((this.getWisdomModifier() || 0 ))
+      + Number((this.charService.getChar().armor_bonuses.deflection || 0))
+      + Number((this.charService.getChar().armor_bonuses.misc || 0))
+      + Number((this.charService.getChar().armor_bonuses.size || 0))
+      + Number((this.charService.getChar().armor_bonuses.luck || 0));
+  }
+}
+;

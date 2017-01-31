@@ -4,6 +4,7 @@ export interface Char {
     name: string;
     player: string;
     race: string;
+    size: string;
     sex: string;
     eyes: string;
     heir: string;
@@ -24,6 +25,14 @@ export interface Char {
     xp: number;
     dr: string;
     sr: number;
+
+    armor_bonuses: {
+        natural: number,
+        deflection: number,
+        misc: number,
+        size: number,
+        luck: number
+    }
 
     abilities: Object;
     ench_abilities: Object;

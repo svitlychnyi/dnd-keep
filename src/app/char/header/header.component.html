@@ -6,10 +6,20 @@
                 <label for="charName" class="text-uppercase">Character Name</label>
             </div>
 
-            <div class="col-xs-3">
-                <input type="text" id="class1" class="form-control input-sm"
-                       value="{{charService.getChar().classes.class1.name + ' ' + charService.getChar().classes.class1.level}}"/>
-                <label for="class1" class="text-uppercase">Class (Level)</label>
+            <div class="col-xs-2">
+                <select type="text" id="class1" class="form-control input-sm"
+                        [(ngModel)]="charService.getChar().classes.class1.name">
+                    <option *ngFor="let charClass of classes" value="{{charClass.getName()}}">{{charClass.getName()}}</option>
+                </select>
+                <label for="class1" class="text-uppercase">Class</label>
+            </div>
+            <div class="col-xs-1">
+                <select id="class1Level" class="form-control input-sm"
+                        [(ngModel)]="charService.getChar().classes.class1.level">
+                    <option value="0"></option>
+                    <option *ngFor="let level of levels" value="{{level}}">{{level}}</option>
+                </select>
+                <label for="class1Level" class="text-uppercase">Level</label>
             </div>
 
             <div class="col-xs-2">
@@ -23,20 +33,34 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-xs-2">
-                <input type="text" id="race" class="form-control input-sm" [(ngModel)]="charService.getChar().race"/>
-                <label for="race" class="text-uppercase">Race</label>
-            </div>
-
-            <div class="col-xs-1">
-                <input type="text" id="vision" class="form-control input-sm" [(ngModel)]="charService.getChar().vision"/>
-                <label for="vision" class="text-uppercase">Vision</label>
-            </div>
-
             <div class="col-xs-3">
-                <input type="text" id="class2" class="form-control input-sm"
-                    value="{{charService.getChar().classes.class2.name + ' ' + charService.getChar().classes.class2.level}}"/>
-                <label for="class2" class="text-uppercase">Class (Level)</label>
+                <div class="col-xs-6">
+                    <input type="text" id="race" class="form-control input-sm" [(ngModel)]="charService.getChar().race"/>
+                    <label for="race" class="text-uppercase">Race</label>
+                </div>
+
+                <div class="col-xs-6">
+                    <select id="size" class="form-control input-sm" [(ngModel)]="charService.getChar().size">
+                        <option *ngFor="let size of sizes" value="{{size.getName()}}">{{size.getDescription()}}</option>
+                    </select>
+                    <label for="size" class="text-uppercase">Size</label>
+                </div>
+            </div>
+
+            <div class="col-xs-2">
+                <select type="text" id="class2" class="form-control input-sm"
+                        [(ngModel)]="charService.getChar().classes.class2.name">
+                    <option *ngFor="let charClass of classes" value="{{charClass.getName()}}">{{charClass.getName()}}</option>
+                </select>
+                <label for="class2" class="text-uppercase">Class</label>
+            </div>
+            <div class="col-xs-1">
+                <select id="class2Level" class="form-control input-sm"
+                        [(ngModel)]="charService.getChar().classes.class2.level">
+                    <option value="0"></option>
+                    <option *ngFor="let level of levels" value="{{level}}">{{level}}</option>
+                </select>
+                <label for="class2Level" class="text-uppercase">Level</label>
             </div>
 
             <div class="col-xs-2">
@@ -60,10 +84,20 @@
                 <label for="playerName" class="text-uppercase">Player Name</label>
             </div>
 
-            <div class="col-xs-3">
-                <input type="text" id="class3" class="form-control input-sm"
-                       value="{{charService.getChar().classes.class3.name + ' ' + charService.getChar().classes.class3.level}}"/>
-                <label for="class3" class="text-uppercase">Class (Level)</label>
+            <div class="col-xs-2">
+                <select type="text" id="class3" class="form-control input-sm"
+                        [(ngModel)]="charService.getChar().classes.class3.name">
+                    <option *ngFor="let charClass of classes" value="{{charClass.getName()}}">{{charClass.getName()}}</option>
+                </select>
+                <label for="class3" class="text-uppercase">Class</label>
+            </div>
+            <div class="col-xs-1">
+                <select id="class3Level" class="form-control input-sm"
+                        [(ngModel)]="charService.getChar().classes.class3.level">
+                    <option value="0"></option>
+                    <option *ngFor="let level of levels" value="{{level}}">{{level}}</option>
+                </select>
+                <label for="class3Level" class="text-uppercase">Level</label>
             </div>
 
             <div class="col-xs-2">

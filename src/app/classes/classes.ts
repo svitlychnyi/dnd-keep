@@ -7,6 +7,10 @@ import {Ability} from "../char/abilities/abitly";
  */
 export class Classes {
     public static ALL:Classes[] = [];
+
+    public static NONE:Classes = new Classes("", ClassesFormulas.none,
+      ClassesFormulas.none, ClassesFormulas.none, ClassesFormulas.none);
+
     public static CLERIC:Classes = new Classes("cleric", ClassesFormulas.getMediumBAB,
         ClassesFormulas.getHighSave, ClassesFormulas.getLowSave, ClassesFormulas.getHighSave,
         [Skill.CONCENTRATION, Skill.CRAFT_1, Skill.DIPLOMACY, Skill.HEAL, Skill.KNOWLEDGE_ARC, Skill.KNOWLEDGE_HISTORY,
@@ -21,16 +25,16 @@ export class Classes {
     private _fortitudeSaveFunction: any;
     private _reflexSaveFunction: any;
     private _willSaveFunction: any;
-    private _skills:[Skill];
+    private _skills: Skill[];
 
     constructor(name:string, baseAttackBonusFunction: any, fortitudeSaveFunction: any, reflexSaveFunction: any,
-                willSaveFunction: any, skills:[Skill]) {
+                willSaveFunction: any, skills?:[Skill]) {
         this._name = name;
         this._baseAttackBonusFunction = baseAttackBonusFunction;
         this._fortitudeSaveFunction = fortitudeSaveFunction;
         this._reflexSaveFunction = reflexSaveFunction;
         this._willSaveFunction = willSaveFunction;
-        this._skills = skills;
+        this._skills = skills || [];
         Classes.ALL.push(this);
     }
 
@@ -44,7 +48,7 @@ export class Classes {
         return this._name;
     }
 
-    public getSkills():[Skill] {
+    public getSkills(): Skill[] {
         return this._skills;
     }
 

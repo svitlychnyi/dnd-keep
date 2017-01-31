@@ -1,0 +1,8 @@
+{
+  "main": {
+    "js": "/dnd-keep/main.dc0b056dcdd0f7cf4d63.bundle.js"
+  },
+  "polyfills": {
+    "js": "/dnd-keep/polyfills.cfdc540f1ffc15661413.bundle.js"
+  }
+}

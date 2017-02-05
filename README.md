@@ -1,4 +1,4 @@
-# D&D Keep 
+# <a href="http://svitlychnyi.github.io/dnd-keep/">D&D Keep</a>
 
 <a href="https://travis-ci.org/svitlychnyi/dnd-keep"><img src="https://travis-ci.org/svitlychnyi/dnd-keep.svg?branch=master"></a>
 
@@ -16,6 +16,4 @@ Project based on:
     <img src="https://cloud.githubusercontent.com/assets/1016365/9863762/a84fed4a-5af7-11e5-9dde-d5da01e797e7.png" alt="Webpack and Angular 2" width="300"/>
   </a>
 </p>
-
-<a href="http://svitlychnyi.github.io/dnd-keep/">Demo</a>
     

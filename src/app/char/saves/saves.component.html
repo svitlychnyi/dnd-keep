@@ -1,68 +1,70 @@
 <div class="row">
-    <div class="col-xs-5">
-        <div class="row">
-            <div class="col-xs-8">
-                <label class="text-uppercase">Saving Throws</label>
-            </div>
-            <div class="col-xs-3">
-                <label class="text-uppercase">Total</label>
-            </div>
-        </div>
+  <div class="col-xs-5">
+    <div class="row">
+      <div class="col-xs-8">
+        <label class="text-uppercase">Saving Throws</label>
+      </div>
+      <div class="col-xs-3">
+        <label class="text-uppercase">Total</label>
+      </div>
     </div>
-    <div class="col-xs-7">
-        <div class="row">
-            <div class="col-xs-2">
-                <label class="text-uppercase">Base Save</label>
-            </div>
-            <div class="col-xs-2">
-                <label class="text-uppercase">Ability Modifier</label>
-            </div>
-            <div class="col-xs-2">
-                <label class="text-uppercase">Magic Modifier</label>
-            </div>
-            <div class="col-xs-2">
-                <label class="text-uppercase">Misc Modifier</label>
-            </div>
-            <div class="col-xs-2">
-                <label class="text-uppercase">Temp Modifier</label>
-            </div>
-            <div class="col-xs-2">
-                <label class="text-uppercase">Other Modifiers</label>
-            </div>
-        </div>
+  </div>
+  <div class="col-xs-7">
+    <div class="row">
+      <div class="col-xs-2">
+        <label class="text-uppercase">Base Save</label>
+      </div>
+      <div class="col-xs-2">
+        <label class="text-uppercase">Ability Modifier</label>
+      </div>
+      <div class="col-xs-2">
+        <label class="text-uppercase">Magic Modifier</label>
+      </div>
+      <div class="col-xs-2">
+        <label class="text-uppercase">Misc Modifier</label>
+      </div>
+      <div class="col-xs-2">
+        <label class="text-uppercase">Temp Modifier</label>
+      </div>
+      <div class="col-xs-2">
+        <label class="text-uppercase">Other Modifiers</label>
+      </div>
     </div>
+  </div>
 </div>
 <div class="row" *ngFor="let save of saves">
-    <div class="col-xs-5">
-        <div class="row">
-            <div class="col-xs-8">
-                <input class="text-uppercase inverse form-control input-sm" value="{{save.getLabel()}}" />
-            </div>
-            <div class="col-xs-3">
-                <input readonly class="text-uppercase form-control input-sm" value="" />
-            </div>
-        </div>
+  <div class="col-xs-5">
+    <div class="row">
+      <div class="col-xs-8">
+        <input class="text-uppercase inverse form-control input-sm" value="{{save.getLabel()}}"/>
+      </div>
+      <div class="col-xs-3">
+        <input readonly class="text-uppercase form-control input-sm" value=""/>
+      </div>
     </div>
-    <div class="col-xs-7">
-        <div class="row">
-            <div class="col-xs-2">
-                <input readonly class="text-uppercase form-control input-sm" value="{{charService.getSave(save.getAbility())}}" />
-            </div>
-            <div class="col-xs-2 {{save.getAbility().getName()}}">
-                <input readonly class="text-uppercase form-control input-sm" value="{{charService.getAbilityModifier(save.getAbility())}}" />
-            </div>
-            <div class="col-xs-2">
-                <input class="text-uppercase form-control input-sm" value="" />
-            </div>
-            <div class="col-xs-2">
-                <input class="text-uppercase form-control input-sm" value="" />
-            </div>
-            <div class="col-xs-2">
-                <input class="text-uppercase form-control input-sm" value="" />
-            </div>
-            <div class="col-xs-2">
-                <input class="text-uppercase form-control input-sm" value="" />
-            </div>
-        </div>
+  </div>
+  <div class="col-xs-7">
+    <div class="row">
+      <div class="col-xs-2">
+        <input readonly class="text-uppercase form-control input-sm"
+               value="{{charService.getSave(save.getAbility())}}"/>
+      </div>
+      <div class="col-xs-2 {{save.getAbility().getName()}}">
+        <input readonly class="text-uppercase form-control input-sm"
+               value="{{charService.getAbilityModifier(save.getAbility())}}"/>
+      </div>
+      <div class="col-xs-2">
+        <input class="text-uppercase form-control input-sm" value=""/>
+      </div>
+      <div class="col-xs-2">
+        <input class="text-uppercase form-control input-sm" value=""/>
+      </div>
+      <div class="col-xs-2">
+        <input class="text-uppercase form-control input-sm" value=""/>
+      </div>
+      <div class="col-xs-2">
+        <input class="text-uppercase form-control input-sm" value=""/>
+      </div>
     </div>
+  </div>
 </div>

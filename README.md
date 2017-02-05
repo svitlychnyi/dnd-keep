@@ -1,8 +1,10 @@
-<img src="https://travis-ci.org/svitlychnyi/dnd-keep.svg?branch=master">
+# D&D Keep 
+
+<a href="https://travis-ci.org/svitlychnyi/dnd-keep"><img src="https://travis-ci.org/svitlychnyi/dnd-keep.svg?branch=master"></a>
 
 <p align="center">
   <a href="https://www.behance.net/in2eternity" target="_blank">
-    <img width="100" alt="D&D Keep" src="src/assets/img/sargon.jpg">
+    <img width="150" alt="D&D Keep" src="src/assets/img/sargon.jpg">
   </a>
 </p>
 
@@ -16,3 +18,4 @@ Project based on:
 </p>
 
 <a href="http://svitlychnyi.github.io/dnd-keep/">Demo</a>
+    

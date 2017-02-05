@@ -1,1 +1,10 @@
-{"version":3,"file":"attacks.component.js","sourceRoot":"","sources":["attacks.component.ts"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;YAQA;gBAAA;oBACW,YAAO,GAAY,eAAM,CAAC,GAAG,CAAC;gBACzC,CAAC;gBAPD;oBAAC,gBAAS,CAAC;wBACP,QAAQ,EAAE,SAAS;wBACnB,WAAW,EAAE,2CAA2C;qBAC3D,CAAC;;oCAAA;gBAIF,uBAAC;YAAD,CAAC,AAFD,IAEC;YAFD,+CAEC,CAAA;YAAA,CAAC"}
+{
+  "version": 3,
+  "file": "attacks.component.js",
+  "sourceRoot": "",
+  "sources": [
+    "attacks.component.ts"
+  ],
+  "names": [],
+  "mappings": ";;;;;;;;;;;;;;;;;;;;;;;YAQA;gBAAA;oBACW,YAAO,GAAY,eAAM,CAAC,GAAG,CAAC;gBACzC,CAAC;gBAPD;oBAAC,gBAAS,CAAC;wBACP,QAAQ,EAAE,SAAS;wBACnB,WAAW,EAAE,2CAA2C;qBAC3D,CAAC;;oCAAA;gBAIF,uBAAC;YAAD,CAAC,AAFD,IAEC;YAFD,+CAEC,CAAA;YAAA,CAAC"
+}

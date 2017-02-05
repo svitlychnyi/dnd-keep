@@ -1,55 +1,55 @@
 <div class="row">
-    <div class="col-xs-4 col-xs-offset-1">
-        <div class="row">
-            <div class="col-xs-2"></div>
-            <div class="col-xs-5 col-xs-offset-1"><label class="text-uppercase">Skills</label></div>
-            <div class="col-xs-3"><label class="text-uppercase">Class</label></div>
-        </div>
+  <div class="col-xs-4 col-xs-offset-1">
+    <div class="row">
+      <div class="col-xs-2"></div>
+      <div class="col-xs-5 col-xs-offset-1"><label class="text-uppercase">Skills</label></div>
+      <div class="col-xs-3"><label class="text-uppercase">Class</label></div>
     </div>
-    <div class="col-xs-7">
-        <div class="row">
-            <div class="col-xs-2"><label class="text-uppercase">Cross Class</label></div>
-        </div>
+  </div>
+  <div class="col-xs-7">
+    <div class="row">
+      <div class="col-xs-2"><label class="text-uppercase">Cross Class</label></div>
     </div>
+  </div>
 </div>
 <div class="row">
-    <div class="col-xs-4 col-xs-offset-1">
-        <div class="row">
-            <div class="col-xs-2"></div>
-            <div class="col-xs-5 col-xs-offset-1"><label class="text-uppercase">Max Ranks</label></div>
-            <div class="col-xs-3"><input class="form-control input-sm" value="{{maxClassSkillRank()}}"/></div>
-        </div>
+  <div class="col-xs-4 col-xs-offset-1">
+    <div class="row">
+      <div class="col-xs-2"></div>
+      <div class="col-xs-5 col-xs-offset-1"><label class="text-uppercase">Max Ranks</label></div>
+      <div class="col-xs-3"><input class="form-control input-sm" value="{{maxClassSkillRank()}}"/></div>
     </div>
-    <div class="col-xs-7">
-        <div class="row">
-            <div class="col-xs-2"><input class="form-control input-sm" value="{{maxCrossClassSkillRank()}}"/></div>
-            <div class="col-xs-2"><label class="input-sm" class="text-uppercase">Total</label></div>
-            <div class="col-xs-2"><label class="text-uppercase">Skill ranks</label></div>
-            <div class="col-xs-2"><label class="text-uppercase">Ability Modifier</label></div>
-            <div class="col-xs-2"><label class="text-uppercase">Misc Modifier</label></div>
-        </div>
+  </div>
+  <div class="col-xs-7">
+    <div class="row">
+      <div class="col-xs-2"><input class="form-control input-sm" value="{{maxCrossClassSkillRank()}}"/></div>
+      <div class="col-xs-2"><label class="input-sm" class="text-uppercase">Total</label></div>
+      <div class="col-xs-2"><label class="text-uppercase">Skill ranks</label></div>
+      <div class="col-xs-2"><label class="text-uppercase">Ability Modifier</label></div>
+      <div class="col-xs-2"><label class="text-uppercase">Misc Modifier</label></div>
     </div>
+  </div>
 </div>
 <div class="row" *ngFor="let skill of skills">
-    <div class="col-xs-4 col-xs-offset-1">
-        <div class="row">
-            <div class="col-xs-2"><input type="checkbox" [checked]="isClassSkill(skill)" disabled></div>
-            <div class="col-xs-10" style="text-align: left"><label class="input-sm">{{skill.getLabel()}}</label></div>
-        </div>
+  <div class="col-xs-4 col-xs-offset-1">
+    <div class="row">
+      <div class="col-xs-2"><input type="checkbox" [checked]="isClassSkill(skill)" disabled></div>
+      <div class="col-xs-10" style="text-align: left"><label class="input-sm">{{skill.getLabel()}}</label></div>
     </div>
-    <div class="col-xs-7">
-        <div class="row">
-            <div class="col-xs-2 {{skill.getAbility().getName()}}">
-                <input type="text" class="text-uppercase form-control input-sm" value="{{skill.getAbility().getName()}}"/>
-            </div>
-            <div class="col-xs-2"><input type="text" class="form-control input-sm"
-                                         value="{{ charService.getTotalSkillRank(skill) }}"/></div>
-            <div class="col-xs-2"><input type="text" class="form-control input-sm"
-                                         [(ngModel)]="charService.getChar().skills[skill.getName()]"/></div>
-            <div class="col-xs-2"><input type="text" class="form-control input-sm"
-                                         value="{{ charService.getAbilityModifier(skill.getAbility()) }}"/></div>
-            <div class="col-xs-2"><input type="text" class="form-control input-sm"
-                                         [(ngModel)]="charService.getChar().skills_misc[skill.getName()]"/></div>
-        </div>
+  </div>
+  <div class="col-xs-7">
+    <div class="row">
+      <div class="col-xs-2 {{skill.getAbility().getName()}}">
+        <input type="text" class="text-uppercase form-control input-sm" value="{{skill.getAbility().getName()}}"/>
+      </div>
+      <div class="col-xs-2"><input type="text" class="form-control input-sm"
+                                   value="{{ charService.getTotalSkillRank(skill) }}"/></div>
+      <div class="col-xs-2"><input type="text" class="form-control input-sm"
+                                   [(ngModel)]="charService.getChar().skills[skill.getName()]"/></div>
+      <div class="col-xs-2"><input type="text" class="form-control input-sm"
+                                   value="{{ charService.getAbilityModifier(skill.getAbility()) }}"/></div>
+      <div class="col-xs-2"><input type="text" class="form-control input-sm"
+                                   [(ngModel)]="charService.getChar().skills_misc[skill.getName()]"/></div>
     </div>
+  </div>
 </div>

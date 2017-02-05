@@ -1,1 +1,10 @@
-{"version":3,"file":"weapons.component.js","sourceRoot":"","sources":["weapons.component.ts"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;YAQA;gBAAA;oBACW,YAAO,GAAY,CAAC,IAAI,eAAM,EAAE,EAAE,IAAI,eAAM,EAAE,EAAE,IAAI,eAAM,EAAE,CAAC,CAAC;gBACzE,CAAC;gBAPD;oBAAC,gBAAS,CAAC;wBACP,QAAQ,EAAE,SAAS;wBACnB,WAAW,EAAE,2CAA2C;qBAC3D,CAAC;;oCAAA;gBAIF,uBAAC;YAAD,CAAC,AAFD,IAEC;YAFD,+CAEC,CAAA;YAAA,CAAC"}
+{
+  "version": 3,
+  "file": "weapons.component.js",
+  "sourceRoot": "",
+  "sources": [
+    "weapons.component.ts"
+  ],
+  "names": [],
+  "mappings": ";;;;;;;;;;;;;;;;;;;;;;;YAQA;gBAAA;oBACW,YAAO,GAAY,CAAC,IAAI,eAAM,EAAE,EAAE,IAAI,eAAM,EAAE,EAAE,IAAI,eAAM,EAAE,CAAC,CAAC;gBACzE,CAAC;gBAPD;oBAAC,gBAAS,CAAC;wBACP,QAAQ,EAAE,SAAS;wBACnB,WAAW,EAAE,2CAA2C;qBAC3D,CAAC;;oCAAA;gBAIF,uBAAC;YAAD,CAAC,AAFD,IAEC;YAFD,+CAEC,CAAA;YAAA,CAAC"
+}

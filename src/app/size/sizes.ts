@@ -14,6 +14,12 @@ export class Sizes {
   public static GARGANTUAN: Sizes = new Sizes('g', 'Gargantuan', -4, -4, 12, -12, 20);
   public static COLOSSAL: Sizes = new Sizes('c', 'Colossal', -8, -8, 16, -16, 30);
 
+  public static getClass(name: string): Sizes {
+    return Sizes.ALL.find((charSize: Sizes) => {
+      return charSize.getName() === name;
+    });
+  }
+
   private name: string;
   private description: string;
   private armorModifier: number;
@@ -32,12 +38,6 @@ export class Sizes {
     this.specialAttackModifier = Number(specialAttackModifier || 0);
     this.reach = Number(reach || 5);
     Sizes.ALL.push(this);
-  }
-
-  public static getClass(name:string):Sizes {
-    return Sizes.ALL.find((charSize: Sizes) => {
-      return charSize.getName() === name;
-    });
   }
 
   public getName(): string {

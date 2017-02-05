@@ -1,1 +1,10 @@
-{"version":3,"file":"weapon.js","sourceRoot":"","sources":["weapon.ts"],"names":[],"mappings":";;;;;;;YAAA;gBAAA;gBAEA,CAAC;gBAAD,aAAC;YAAD,CAAC,AAFD,IAEC;YAFD,2BAEC,CAAA"}
+{
+  "version": 3,
+  "file": "weapon.js",
+  "sourceRoot": "",
+  "sources": [
+    "weapon.ts"
+  ],
+  "names": [],
+  "mappings": ";;;;;;;YAAA;gBAAA;gBAEA,CAAC;gBAAD,aAAC;YAAD,CAAC,AAFD,IAEC;YAFD,2BAEC,CAAA"
+}

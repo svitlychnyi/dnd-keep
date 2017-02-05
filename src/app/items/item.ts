@@ -3,19 +3,19 @@
  */
 export class Item {
 
-    public name:string;
-    public bonus:number;
+  public name: string;
+  public bonus: number;
 
-    constructor(name:string, bonus:number) {
-        this.name = name;
-        this.bonus = bonus;
-    }
+  constructor(name: string, bonus: number) {
+    this.name = name;
+    this.bonus = bonus;
+  }
 
-    public getName():string {
-        return this.name;
-    };
+  public getName(): string {
+    return this.name;
+  };
 
-    public getBonus():number {
-        return this.bonus;
-    };
+  public getBonus(): number {
+    return this.bonus;
+  };
 }

@@ -9,18 +9,20 @@ import { Classes } from '../../classes/classes';
 })
 
 export class ACComponent {
-  dex: Ability = Ability.DEX;
+  public dex: Ability = Ability.DEX;
 
   constructor(public charService: CharService) {
   }
 
-  getWisdomModifier(): number {
-    var isMonk: boolean = false;
+  public getWisdomModifier(): number {
+    let isMonk: boolean = false;
 
-    for (var classKey in this.charService.getChar().classes) {
-      isMonk = this.charService.getChar().classes[classKey].name == Classes.MONK.getName()
-        ? true
-        : isMonk;
+    for (let classKey in this.charService.getChar().classes) {
+      if (classKey) {
+        isMonk = this.charService.getChar().classes[classKey].name === Classes.MONK.getName()
+          ? true
+          : isMonk;
+      }
     }
 
     return isMonk
@@ -28,7 +30,7 @@ export class ACComponent {
       : 0;
   }
 
-  getAC(): number {
+  public getAC(): number {
     return 10
       + Number(this.charService.getChar().armor.bonus)
       + Number(this.charService.getChar().shield.bonus)
@@ -41,7 +43,7 @@ export class ACComponent {
       + Number((this.charService.getChar().armor_bonuses.luck || 0));
   }
 
-  getFF(): number {
+  public getFF(): number {
     return 10
       + Number(this.charService.getChar().armor.bonus)
       + Number(this.charService.getChar().shield.bonus)
@@ -52,7 +54,7 @@ export class ACComponent {
       + Number((this.charService.getChar().armor_bonuses.luck || 0));
   }
 
-  getTouch(): number {
+  public getTouch(): number {
     return 10
       + Number(this.charService.getAbilityModifier(Ability.DEX))
       + Number((this.getWisdomModifier() || 0 ))
@@ -61,5 +63,4 @@ export class ACComponent {
       + Number((this.charService.getChar().armor_bonuses.size || 0))
       + Number((this.charService.getChar().armor_bonuses.luck || 0));
   }
-}
-;
+};

@@ -10,9 +10,9 @@ import { Sizes } from '../../size/sizes';
 
 export class HeaderComponent implements OnInit {
 
-  protected sizes: Sizes[] = Sizes.ALL;
-  protected classes: Classes[] = Classes.ALL;
-  protected levels: number[] = [];
+  public sizes: Sizes[] = Sizes.ALL;
+  public classes: Classes[] = Classes.ALL;
+  public levels: number[] = [];
 
   constructor(public charService: CharService) {
   }

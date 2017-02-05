@@ -14,7 +14,7 @@ export interface Char {
   weight: number;
   alignment: string;
   deities: string;
-  classes: Object;
+  classes: {class1: any, class2: any, class3: any};
   avatar: string;
 
   initiative: number;

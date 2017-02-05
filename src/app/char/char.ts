@@ -49,7 +49,7 @@ export interface Char {
     fortitude: { magic: number, misc: number, temp: number, other: number },
     reflex: { magic: number, misc: number, temp: number, other: number },
     willpower: { magic: number, misc: number, temp: number, other: number }
-  },
+  };
 
   armor: Item;
   shield: Item;

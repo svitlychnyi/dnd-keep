@@ -24,8 +24,8 @@ export class CharService {
     deities: 'Luck / Trickery',
     classes: {
       class1: {name: 'cleric', level: 10},
-      class2: {name: 'cleric', level: 0},
-      class3: {name: 'cleric', level: 0}
+      class2: {name: '', level: 0},
+      class3: {name: '', level: 0}
     },
     avatar: 'sargon.jpg',
 
@@ -37,6 +37,11 @@ export class CharService {
     xp: 44100,
     dr: '5/evil',
     sr: 21,
+
+    attack_bonuses: {
+      melee: { misc: 1, temp: 2, other: 0 },
+      ranged: { misc: 1, temp: 0, other: 0 }
+    },
 
     armor_bonuses: {
       natural: 1,
@@ -64,6 +69,11 @@ export class CharService {
     },
     skills_misc: {
       spellcraft: 2
+    },
+    saves: {
+      fortitude: { magic: 1, misc: 0, temp: 0, other: 0},
+      reflex: { magic: 0, misc: 2, temp: 0, other: 0},
+      willpower: { magic: 0, misc: 0, temp: 3, other: 0}
     },
 
     armor: new Item('Breast Plate', 4),

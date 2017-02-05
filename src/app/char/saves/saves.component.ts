@@ -12,5 +12,14 @@ export class SavesComponent {
 
   constructor(public charService: CharService) {
   };
+
+  public getTotalSave(save: Save): number {
+    return Number(this.charService.getSave(save.getAbility()))
+      + Number(this.charService.getAbilityModifier(save.getAbility()))
+      + Number(this.charService.getChar().saves[save.getName()].magic)
+      + Number(this.charService.getChar().saves[save.getName()].misc)
+      + Number(this.charService.getChar().saves[save.getName()].temp)
+      + Number(this.charService.getChar().saves[save.getName()].other);
+  }
 }
 ;

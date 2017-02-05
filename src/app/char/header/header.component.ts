@@ -20,7 +20,7 @@ export class HeaderComponent implements OnInit {
   /* tslint:disable */
   ngOnInit() {
     let i: number = 0;
-    while (i < 20) {
+    while (i < 30) {
       this.levels.push(++i);
     }
 

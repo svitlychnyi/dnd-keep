@@ -14,7 +14,7 @@ export class Sizes {
   public static GARGANTUAN: Sizes = new Sizes('g', 'Gargantuan', -4, -4, 12, -12, 20);
   public static COLOSSAL: Sizes = new Sizes('c', 'Colossal', -8, -8, 16, -16, 30);
 
-  public static getClass(name: string): Sizes {
+  public static getSize(name: string): Sizes {
     return Sizes.ALL.find((charSize: Sizes) => {
       return charSize.getName() === name;
     });

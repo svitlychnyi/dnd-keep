@@ -18,8 +18,4 @@ export class CharClass {
   public getLevel(): number {
     return this._level;
   }
-
-  public toString(): string {
-    return '111';
-  }
 }

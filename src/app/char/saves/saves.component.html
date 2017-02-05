@@ -39,7 +39,7 @@
         <input class="text-uppercase inverse form-control input-sm" value="{{save.getLabel()}}"/>
       </div>
       <div class="col-xs-3">
-        <input readonly class="text-uppercase form-control input-sm" value=""/>
+        <input readonly class="text-uppercase form-control input-sm" value="{{getTotalSave(save)}}"/>
       </div>
     </div>
   </div>
@@ -54,16 +54,16 @@
                value="{{charService.getAbilityModifier(save.getAbility())}}"/>
       </div>
       <div class="col-xs-2">
-        <input class="text-uppercase form-control input-sm" value=""/>
+        <input class="text-uppercase form-control input-sm" [(ngModel)]="charService.getChar().saves[save.getName()].magic"/>
       </div>
       <div class="col-xs-2">
-        <input class="text-uppercase form-control input-sm" value=""/>
+        <input class="text-uppercase form-control input-sm" [(ngModel)]="charService.getChar().saves[save.getName()].misc"/>
       </div>
       <div class="col-xs-2">
-        <input class="text-uppercase form-control input-sm" value=""/>
+        <input class="text-uppercase form-control input-sm" [(ngModel)]="charService.getChar().saves[save.getName()].temp"/>
       </div>
       <div class="col-xs-2">
-        <input class="text-uppercase form-control input-sm" value=""/>
+        <input class="text-uppercase form-control input-sm" [(ngModel)]="charService.getChar().saves[save.getName()].other"/>
       </div>
     </div>
   </div>

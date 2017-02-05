@@ -26,6 +26,11 @@ export interface Char {
   dr: string;
   sr: number;
 
+  attack_bonuses: {
+    melee: { misc: number, temp: number, other: number },
+    ranged: { misc: number, temp: number, other: number }
+  };
+
   armor_bonuses: {
     natural: number,
     deflection: number,
@@ -34,12 +39,17 @@ export interface Char {
     luck: number
   };
 
-  abilities: Object;
-  ench_abilities: Object;
-  tmp_abilities: Object;
+  abilities: any;
+  ench_abilities: any;
+  tmp_abilities: any;
 
-  skills: Object;
-  sills_misc: Object;
+  skills: any;
+  sills_misc: any;
+  saves: {
+    fortitude: { magic: number, misc: number, temp: number, other: number },
+    reflex: { magic: number, misc: number, temp: number, other: number },
+    willpower: { magic: number, misc: number, temp: number, other: number }
+  },
 
   armor: Item;
   shield: Item;

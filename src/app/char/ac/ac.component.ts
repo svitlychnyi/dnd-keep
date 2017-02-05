@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { CharService } from '../char.service';
 import { Ability } from '../abilities/abitly';
 import { Classes } from '../../classes/classes';
+import { Sizes } from '../../size/sizes';
 
 @Component({
   selector: 'ac',
@@ -40,7 +41,8 @@ export class ACComponent {
       + Number((this.charService.getChar().armor_bonuses.natural || 0))
       + Number((this.charService.getChar().armor_bonuses.misc || 0))
       + Number((this.charService.getChar().armor_bonuses.size || 0))
-      + Number((this.charService.getChar().armor_bonuses.luck || 0));
+      + Number((this.charService.getChar().armor_bonuses.luck || 0))
+      + Number(this.getSizeModifier());
   }
 
   public getFF(): number {
@@ -51,7 +53,8 @@ export class ACComponent {
       + Number((this.charService.getChar().armor_bonuses.natural || 0))
       + Number((this.charService.getChar().armor_bonuses.misc || 0))
       + Number((this.charService.getChar().armor_bonuses.size || 0))
-      + Number((this.charService.getChar().armor_bonuses.luck || 0));
+      + Number((this.charService.getChar().armor_bonuses.luck || 0))
+      + Number(this.getSizeModifier());
   }
 
   public getTouch(): number {
@@ -61,6 +64,17 @@ export class ACComponent {
       + Number((this.charService.getChar().armor_bonuses.deflection || 0))
       + Number((this.charService.getChar().armor_bonuses.misc || 0))
       + Number((this.charService.getChar().armor_bonuses.size || 0))
-      + Number((this.charService.getChar().armor_bonuses.luck || 0));
+      + Number((this.charService.getChar().armor_bonuses.luck || 0))
+      + Number(this.getSizeModifier());
+  }
+
+  public getSizeModifier(): number {
+    let sizeArmorModifier = 0;
+    let sizeType: Sizes = Sizes.getSize(this.charService.getChar().size);
+    if (sizeType) {
+      sizeArmorModifier = sizeType.getArmorModifier();
+    }
+
+    return sizeArmorModifier;
   }
 };

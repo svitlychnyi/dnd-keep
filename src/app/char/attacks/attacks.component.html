@@ -39,29 +39,29 @@
         <input class="text-uppercase inverse form-control input-sm" value="{{attack.getName()}}"/>
       </div>
       <div class="col-xs-3">
-        <input class="text-uppercase form-control input-sm" value=""/>
+        <input class="text-uppercase form-control input-sm" readonly value="{{getTotalAttack(attack)}}"/>
       </div>
     </div>
   </div>
   <div class="col-xs-7">
     <div class="row">
       <div class="col-xs-2">
-        <input class="text-uppercase form-control input-sm" value=""/>
+        <input class="text-uppercase form-control input-sm" readonly value="{{charService.getBAB()}}"/>
       </div>
       <div class="col-xs-2 {{attack.getAbility().getName()}}">
-        <input class="text-uppercase form-control input-sm" value=""/>
+        <input class="text-uppercase form-control input-sm" readonly value="{{charService.getAbilityModifier(attack.getAbility())}}"/>
       </div>
       <div class="col-xs-2">
-        <input class="text-uppercase form-control input-sm" value=""/>
+        <input class="text-uppercase form-control input-sm" readonly value="{{getSizeModifier()}}"/>
       </div>
       <div class="col-xs-2">
-        <input class="text-uppercase form-control input-sm" value=""/>
+        <input class="text-uppercase form-control input-sm" [(ngModel)]="charService.getChar().attack_bonuses[attack.getName()].misc"/>
       </div>
       <div class="col-xs-2">
-        <input class="text-uppercase form-control input-sm" value=""/>
+        <input class="text-uppercase form-control input-sm" [(ngModel)]="charService.getChar().attack_bonuses[attack.getName()].temp"/>
       </div>
       <div class="col-xs-2">
-        <input class="text-uppercase form-control input-sm" value=""/>
+        <input class="text-uppercase form-control input-sm" [(ngModel)]="charService.getChar().attack_bonuses[attack.getName()].other"/>
       </div>
     </div>
   </div>

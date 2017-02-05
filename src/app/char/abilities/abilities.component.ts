@@ -8,7 +8,7 @@ import { CharService } from '../char.service';
 })
 
 export class AbilitiesComponent {
-  private abilities: Ability[] = Ability.ALL;
+  public abilities: Ability[] = Ability.ALL;
 
   constructor(public _charService: CharService) {
   };

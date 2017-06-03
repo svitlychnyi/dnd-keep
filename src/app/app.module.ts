@@ -28,6 +28,7 @@ import { ShieldComponent } from './char/shield/shield.component';
 import { SkillsComponent } from './char/skills/skills.component';
 import { WeaponsComponent } from './char/weapons/weapons.component';
 import { CharService } from './char/char.service';
+import { Ng2Webstorage } from 'ng2-webstorage';
 
 // Application wide providers
 const APP_PROVIDERS = [
@@ -64,7 +65,8 @@ type StoreType = {
     BrowserModule,
     FormsModule,
     HttpModule,
-    RouterModule.forRoot(ROUTES, {useHash: true, preloadingStrategy: PreloadAllModules})
+    RouterModule.forRoot(ROUTES, {useHash: true, preloadingStrategy: PreloadAllModules}),
+    Ng2Webstorage
   ],
   providers: [ // expose our Services and Providers into Angular's dependency injection
     ENV_PROVIDERS,

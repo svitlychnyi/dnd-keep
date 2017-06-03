@@ -25,5 +25,22 @@ export class HeaderComponent implements OnInit {
     }
 
   }
+
+  public changeAvatar(evt){
+    let files = evt.target.files;
+    let file = files[0];
+
+    if (files && file) {
+      let reader = new FileReader();
+
+      reader.onload = this._handleReaderLoaded.bind(this);
+
+      reader.readAsBinaryString(file);
+    }
+  }
+
+  _handleReaderLoaded(readerEvt) {
+    let binaryString = readerEvt.target.result;
+    this.charService.getChar().avatar = btoa(binaryString);
+  }
 }
-;

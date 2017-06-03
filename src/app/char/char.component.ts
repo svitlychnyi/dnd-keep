@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { CharService } from './char.service';
 import { CharSerializer } from './charSerializer';
 
@@ -7,9 +7,22 @@ import { CharSerializer } from './charSerializer';
   templateUrl: 'char.component.html'
 })
 
-export class CharComponent {
+export class CharComponent implements OnInit, OnDestroy {
+
+  private interval;
 
   constructor(public charService: CharService) {
+  }
+
+  ngOnInit(): void {
+    this.interval = setInterval(() => {
+
+      this.charService.saveToLocalStorage();
+    }, 10000);
+  }
+
+  ngOnDestroy(): void {
+    clearInterval(this.interval);
   }
 
   public download() {
@@ -32,5 +45,9 @@ export class CharComponent {
       that.charService.setChar(CharSerializer.deserializeChar(readerEvent.target.result));
     });
     reader.readAsText(event.target.files[0]);
+  }
+
+  public saveChar() {
+    this.charService.saveToLocalStorage();
   }
 }

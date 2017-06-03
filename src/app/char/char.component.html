@@ -1,6 +1,8 @@
 <div class="download">
-  <button (click)="download()">Download</button>
-  <input id="file" type="file" (change)="upload($event)"/>
+  <label class="glyphicon glyphicon-cloud-upload" for="file" style="font-size: 30px; color: #00bcd4">
+    <input id="file" type="file" (change)="upload($event)" style="display: none" />
+  </label>
+  <span class="glyphicon glyphicon-cloud-download" (click)="download()" style="font-size: 30px; color: green"></span>
 </div>
 
 <header></header>

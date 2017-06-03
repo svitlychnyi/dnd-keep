@@ -117,6 +117,12 @@
     </div>
   </div>
   <div class="col-xs-3">
-    <img class="img-responsive avatar" src="assets/img/{{charService.getChar().avatar}}">
+    <div class="download" style="position: absolute; right: -40px; z-index: 100;">
+      <label class="glyphicon glyphicon-camera" for="avatarUpload"
+             style="font-size: 30px; color: #00bcd4;">
+        <input id="avatarUpload" type="file" (change)="changeAvatar($event)" style="display: none" />
+      </label>
+    </div>
+    <img class="img-responsive avatar" src="data:image/png;base64,{{charService.getChar().avatar}}">
   </div>
 </div>

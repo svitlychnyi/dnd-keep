@@ -1,6 +1,7 @@
 import { Item } from '../items/item';
 
 export interface Char {
+
   name: string;
   player: string;
   race: string;

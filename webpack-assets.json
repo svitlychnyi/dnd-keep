@@ -1,12 +1,12 @@
 {
   "vendor": {
-    "js": "/dnd-keep/vendor.fb4c05d0a028a1ac681b.bundle.js"
+    "js": "/dnd-keep/vendor.29f89ceca64bdb8558f0.bundle.js"
   },
   "main": {
-    "js": "/dnd-keep/main.5b9568aad07895a49009.bundle.js",
+    "js": "/dnd-keep/main.9c0eed90091cbe0a062c.bundle.js",
     "css": "/dnd-keep/main.39d69b20a99f2e719f33dcf8a35f7321.css"
   },
   "polyfills": {
-    "js": "/dnd-keep/polyfills.fb393ccef7725529e5fe.bundle.js"
+    "js": "/dnd-keep/polyfills.c4cbf436a94ead1956a2.bundle.js"
   }
 }

@@ -14,14 +14,14 @@ export class CharComponent implements OnInit, OnDestroy {
   constructor(public charService: CharService) {
   }
 
-  ngOnInit(): void {
+  public ngOnInit(): void {
     this.interval = setInterval(() => {
 
       this.charService.saveToLocalStorage();
     }, 10000);
   }
 
-  ngOnDestroy(): void {
+  public ngOnDestroy(): void {
     clearInterval(this.interval);
   }
 
